@@ -29,8 +29,16 @@ let save16 = document.querySelector("#btn-16");
 let save17 = document.querySelector("#btn-17");
 
 //Text Areas
-let text9 = document.querySelector("#text-9")
-let text10 = document.querySelector("#text-10")
+let text9 = document.querySelector("#text-9");
+let text10 = document.querySelector("#text-10");
+let text11 = document.querySelector("#text-11");
+let text12 = document.querySelector("#text-12");
+let text13 = document.querySelector("#text-13");
+let text14 = document.querySelector("#text-14");
+let text15 = document.querySelector("#text-15");
+let text16 = document.querySelector("#text-16");
+let text17 = document.querySelector("#text-17");
+
 
 
 $(function () {
@@ -201,7 +209,26 @@ $(function () {
   var getResponse10 = localStorage.getItem("hour-10");
   text10.textContent = getResponse10;
 
+  var getResponse11 = localStorage.getItem("hour-11");
+  text11.textContent = getResponse11;
 
+  var getResponse12 = localStorage.getItem("hour-12");
+  text12.textContent = getResponse12;
+
+  var getResponse13 = localStorage.getItem("hour-1");
+  text13.textContent = getResponse13;
+
+  var getResponse14 = localStorage.getItem("hour-2");
+  text14.textContent = getResponse14;
+
+  var getResponse15 = localStorage.getItem("hour-3");
+  text15.textContent = getResponse15;
+
+  var getResponse16 = localStorage.getItem("hour-4");
+  text16.textContent = getResponse16;
+
+  var getResponse17 = localStorage.getItem("hour-5");
+  text17.textContent = getResponse17;
 
   //Show Day 
   var today = dayjs();
