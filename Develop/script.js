@@ -199,6 +199,26 @@ $(function () {
     hour3.classList.add("past");
     hour4.classList.add("past");
     hour5.classList.add("present");
+  } else if (currentTime < 9) {
+    hour9.classList.add("future");
+    hour10.classList.add("future");
+    hour11.classList.add("future");
+    hour12.classList.add("future");
+    hour1.classList.add("future");
+    hour2.classList.add("future");
+    hour3.classList.add("future");
+    hour4.classList.add("future");
+    hour5.classList.add("future");
+  } else if (currentTime > 17) {
+    hour9.classList.add("past");
+    hour10.classList.add("past");
+    hour11.classList.add("past");
+    hour12.classList.add("past");
+    hour1.classList.add("past");
+    hour2.classList.add("past");
+    hour3.classList.add("past");
+    hour4.classList.add("past");
+    hour5.classList.add("past");
   }
 
 
