@@ -15,7 +15,7 @@ N/A
 
 
 ## Usage
-To use this application, please navigate to: . 
+To use this application, please navigate to: https://p-h-davies.github.io/Work-Day-Scheduler/. 
 
 Once you have arrived at that URL, you are free to begin entering your plans for your day! 
 
@@ -27,9 +27,9 @@ To ensure that the data which you have entered is saved, press the blue save but
 
 To understand the color key, please note the following:
 
-Time blocks which are grey are time blocks which have already passed.
-Time blocks which are red are time blocks in the current hour.
-Time blocks which are green are time blocks still in the future.
+- Time blocks which are grey are time blocks which have already passed.
+- Time blocks which are red are time blocks in the current hour.
+- Time blocks which are green are time blocks still in the future.
 
 
 Below is a screenshot showing the application with user data entered:
