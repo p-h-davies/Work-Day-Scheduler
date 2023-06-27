@@ -1,10 +1,7 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+//Selectors
 
-
-let dayEl = document.querySelector("#currentDay")
-
+//Show Day 
+let dayEl = document.querySelector("#currentDay");
 
 //Containers
 let hour9 = document.querySelector("#hour-9");
@@ -40,15 +37,10 @@ let text16 = document.querySelector("#text-16");
 let text17 = document.querySelector("#text-17");
 
 
-
+//Main Code
 $(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
+
+  //Save Button Event Listeners
 
   save9.addEventListener("click", function () {
     let entry1 = document.getElementById("text-9").value;
@@ -97,128 +89,94 @@ $(function () {
 
 
 
-
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-
+  //Current Time
   let currentTime = dayjs().hour();
-  console.log(currentTime)
+  console.log(currentTime);
 
 
-  if (currentTime == 9) {
+  //Container Values
+  hour9.value = 9;
+  hour10.value = 10;
+  hour11.value = 11;
+  hour12.value = 12;
+  hour1.value = 13;
+  hour2.value = 14;
+  hour3.value = 15;
+  hour4.value = 16;
+  hour5.value = 17;
+
+
+  //Container CurrentTime Comparisons
+  if (hour9.value === currentTime) {
     hour9.classList.add("present");
-    hour10.classList.add("future");
-    hour11.classList.add("future");
-    hour12.classList.add("future");
-    hour1.classList.add("future");
-    hour2.classList.add("future");
-    hour3.classList.add("future");
-    hour4.classList.add("future");
-    hour5.classList.add("future");
-  } else if (currentTime === 10) {
+  } else if (hour9.value < currentTime) {
     hour9.classList.add("past");
-    hour10.classList.add("present");
-    hour11.classList.add("future");
-    hour12.classList.add("future");
-    hour1.classList.add("future");
-    hour2.classList.add("future");
-    hour3.classList.add("future");
-    hour4.classList.add("future");
-    hour5.classList.add("future");
-  } else if (currentTime === 11) {
-    hour9.classList.add("past");
-    hour10.classList.add("past");
-    hour11.classList.add("present");
-    hour12.classList.add("future");
-    hour1.classList.add("future");
-    hour2.classList.add("future");
-    hour3.classList.add("future");
-    hour4.classList.add("future");
-    hour5.classList.add("future");
-  } else if (currentTime === 12) {
-    hour9.classList.add("past");
-    hour10.classList.add("past");
-    hour11.classList.add("past");
-    hour12.classList.add("present");
-    hour1.classList.add("future");
-    hour2.classList.add("future");
-    hour3.classList.add("future");
-    hour4.classList.add("future");
-    hour5.classList.add("future");
-  } else if (currentTime === 13) {
-    hour9.classList.add("past");
-    hour10.classList.add("past");
-    hour11.classList.add("past");
-    hour12.classList.add("past");
-    hour1.classList.add("present");
-    hour2.classList.add("future");
-    hour3.classList.add("future");
-    hour4.classList.add("future");
-    hour5.classList.add("future");
-  } else if (currentTime === 14) {
-    hour9.classList.add("past");
-    hour10.classList.add("past");
-    hour11.classList.add("past");
-    hour12.classList.add("past");
-    hour1.classList.add("past");
-    hour2.classList.add("present");
-    hour3.classList.add("future");
-    hour4.classList.add("future");
-    hour5.classList.add("future");
-  } else if (currentTime === 15) {
-    hour9.classList.add("past");
-    hour10.classList.add("past");
-    hour11.classList.add("past");
-    hour12.classList.add("past");
-    hour1.classList.add("past");
-    hour2.classList.add("past");
-    hour3.classList.add("present");
-    hour4.classList.add("future");
-    hour5.classList.add("future");
-  } else if (currentTime === 16) {
-    hour9.classList.add("past");
-    hour10.classList.add("past");
-    hour11.classList.add("past");
-    hour12.classList.add("past");
-    hour1.classList.add("past");
-    hour2.classList.add("past");
-    hour3.classList.add("past");
-    hour4.classList.add("present");
-    hour5.classList.add("future");
-  } else if (currentTime === 17) {
-    hour9.classList.add("past");
-    hour10.classList.add("past");
-    hour11.classList.add("past");
-    hour12.classList.add("past");
-    hour1.classList.add("past");
-    hour2.classList.add("past");
-    hour3.classList.add("past");
-    hour4.classList.add("past");
-    hour5.classList.add("present");
-  } else if (currentTime < 9) {
+  } else if (hour9.value > currentTime) {
     hour9.classList.add("future");
-    hour10.classList.add("future");
-    hour11.classList.add("future");
-    hour12.classList.add("future");
-    hour1.classList.add("future");
-    hour2.classList.add("future");
-    hour3.classList.add("future");
-    hour4.classList.add("future");
-    hour5.classList.add("future");
-  } else if (currentTime > 17) {
-    hour9.classList.add("past");
+  }
+
+  if (hour10.value === currentTime) {
+    hour10.classList.add("present");
+  } else if (hour10.value < currentTime) {
     hour10.classList.add("past");
+  } else if (hour10.value > currentTime) {
+    hour10.classList.add("future");
+  }
+
+  if (hour11.value === currentTime) {
+    hour11.classList.add("present");
+  } else if (hour11.value < currentTime) {
     hour11.classList.add("past");
+  } else if (hour11.value > currentTime) {
+    hour11.classList.add("future");
+  }
+
+  if (hour12.value === currentTime) {
+    hour12.classList.add("present");
+  } else if (hour12.value < currentTime) {
     hour12.classList.add("past");
+  } else if (hour12.value > currentTime) {
+    hour12.classList.add("future");
+  }
+
+  if (hour1.value === currentTime) {
+    hour1.classList.add("present");
+  } else if (hour1.value < currentTime) {
     hour1.classList.add("past");
+  } else if (hour1.value > currentTime) {
+    hour1.classList.add("future");
+  }
+
+  if (hour2.value === currentTime) {
+    hour2.classList.add("present");
+  } else if (hour2.value < currentTime) {
     hour2.classList.add("past");
+  } else if (hour2.value > currentTime) {
+    hour2.classList.add("future");
+  }
+
+  if (hour3.value === currentTime) {
+    hour3.classList.add("present");
+  } else if (hour3.value < currentTime) {
     hour3.classList.add("past");
+  } else if (hour3.value > currentTime) {
+    hour3.classList.add("future");
+  }
+
+  if (hour4.value === currentTime) {
+    hour4.classList.add("present");
+  } else if (hour4.value < currentTime) {
     hour4.classList.add("past");
+  } else if (hour4.value > currentTime) {
+    hour4.classList.add("future");
+  }
+
+  if (hour5.value === currentTime) {
+    hour5.classList.add("present");
+  } else if (hour5.value < currentTime) {
     hour5.classList.add("past");
+  } else if (hour5.value > currentTime) {
+    hour5.classList.add("future");
   }
 
 
@@ -254,11 +212,6 @@ $(function () {
   var today = dayjs();
   $('#currentDay').text(today.format('dddd, MMMM D'));
 
-
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
 });
 
 
